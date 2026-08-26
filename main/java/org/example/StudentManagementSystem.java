@@ -16,24 +16,41 @@ public class StudentManagementSystem {
             menu();
             choice = Integer.parseInt(sc.nextLine());
 
-            if (choice == 1) {
-                addStudent();
-            } else if (choice == 2) {
-                displayAll();
-            } else if (choice == 3) {
-                searchStudent();
-            } else if (choice == 4) {
-                displayResult();
-            } else if (choice == 5) {
-                updateMarks();
-            } else if (choice == 6) {
-                classStats();
-            } else if (choice == 7) {
-                subjectMarks();
-            } else if (choice == 8) {
-                System.out.println("Goodbye!");
-            } else {
-                System.out.println("Invalid choice.");
+            switch (choice) {
+                case 1:
+                    addStudent();
+                    break;
+
+                case 2:
+                    displayAll();
+                    break;
+
+                case 3:
+                    searchStudent();
+                    break;
+
+                case 4:
+                    displayResult();
+                    break;
+
+                case 5:
+                    updateMarks();
+                    break;
+
+                case 6:
+                    classStats();
+                    break;
+
+                case 7:
+                    subjectMarks();
+                    break;
+
+                case 8:
+                    System.out.println("Goodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
             }
         }
     }
