@@ -5,9 +5,7 @@ public class Student {
     int id;
     String name;
     int age;
-    double sub1;
-    double sub2;
-    double sub3;
+    double sub1, sub2, sub3;
 
     public Student(int id, String name, int age, double sub1, double sub2, double sub3) {
         this.id = id;
@@ -19,18 +17,13 @@ public class Student {
     }
 
     public void updateMarks(double m1, double m2, double m3) {
-        this.sub1 = m1;
-        this.sub2 = m2;
-        this.sub3 = m3;
-    }
-
-    public void display() {
-        System.out.printf("%-10d %-15s %-5d %-10.1f %-10.1f %-10.1f%n",
-                id, name, age, sub1, sub2, sub3);
+        sub1 = m1;
+        sub2 = m2;
+        sub3 = m3;
     }
 
     public double average() {
-        return (sub1 + sub2 + sub3) / 3.0;
+        return (sub1 + sub2 + sub3) / 3;
     }
 
     public boolean isPassed() {
@@ -40,11 +33,16 @@ public class Student {
     public String grade() {
         double avg = average();
         if (avg >= 90) return "A+";
-        if (avg >= 80) return "A";
-        if (avg >= 70) return "B";
-        if (avg >= 60) return "C";
-        if (avg >= 50) return "D";
-        if (avg >= 40) return "E";
-        return "F";
+        else if (avg >= 80) return "A";
+        else if (avg >= 70) return "B";
+        else if (avg >= 60) return "C";
+        else if (avg >= 50) return "D";
+        else if (avg >= 40) return "E";
+        else return "F";
+    }
+
+    public void display() {
+        System.out.printf("%-5d %-15s %-5d %-7.1f %-7.1f %-7.1f%n",
+                id, name, age, sub1, sub2, sub3);
     }
 }
